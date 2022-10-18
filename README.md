@@ -9,3 +9,5 @@
   1. vagrant box add mlamamra/myusine
   2. vagrant up
   3. vagrant ssh
+  4. selectionner l'ip
+  5. faire la résolution de nom dans le fichier hosts
