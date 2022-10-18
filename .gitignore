@@ -1,0 +1,8 @@
+# inscrire les chemins de fichiers ou dossiers à ne pas versionner
+.vs/
+# **: à n'importequel degré de sous dossier
+# /**/.vs/
+# * : n'importequelle suite de caractères
+# .vs/settings*
+# !...: exception à une règle précédente
+# !.vs/settings.json
