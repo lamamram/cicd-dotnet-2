@@ -1,18 +1,24 @@
 # image docker pour les jobs du pipeline
 image: bitnami/dotnet-sdk:6-debian-11
 
+stages:
+  - testing
+  - building
+
 # nom de job: valeur arbitraire
 test:
+  stage: testing
   # tag correspondant au runner
   tags:
     - myusine
   # liste des commandes à exécuter
   script:
-    - dotnet build
-    - ls -al usine_s3
+    - echo "Test"
+
 
 build:
+  stage: building
   tags:
     - myusine
   script:
-    - echo "Build"
+    - dotnet build
