@@ -17,3 +17,10 @@
 1. initialisation
   1. git init : création du dépôt .git
   2. git config : ajout du nom et email utilisateur (local ou global)
+
+## agilité
+
+1. origine: le cycle de développement en cascade
+  * travail en silo
+  * cycle prédictif
+  * effet tunnel
