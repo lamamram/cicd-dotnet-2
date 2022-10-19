@@ -9,7 +9,7 @@ test:
   # liste des commandes à exécuter
   script:
     - dotnet build
-    - ls -al
+    - ls -al usine_s3
 
 build:
   tags:
