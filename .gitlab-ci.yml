@@ -1,0 +1,8 @@
+# nom de job: valeur arbitraire
+test:
+  script:
+    - echo "Test"
+
+build:
+  script:
+    - echo "Build"
