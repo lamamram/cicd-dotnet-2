@@ -12,6 +12,14 @@
   4. récipérer l' ip
   5. faire la réslution de nom dans ke fichier hosts
 
+## commandes vagrant 
+
+|cmd.              |desc.
+|:----------------:|---------------------------
+| vagrant -v       | affiche la version
+| vagrant up       | exécute le Vagrantfile du doss courant
+| vagrant halt     | stoppe la vm
+
 ## manipulation d'un dépôt local git
 
 1. **initialisation**
