@@ -9,3 +9,7 @@
   1. vagrant box add mlamamra/myusine
   2. vagrant up
   3. vagrant ssh
+  4. récipérer l' ip
+  5. faire la réslution de nom dans ke fichier hosts
+
+## manipulation d'un dépôt local git
