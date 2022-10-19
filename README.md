@@ -13,3 +13,7 @@
   5. faire la réslution de nom dans ke fichier hosts
 
 ## manipulation d'un dépôt local git
+
+1. initialisation
+  1. git init : création du dépôt .git
+  2. git config : ajout du nom et email utilisateur (local ou global)
