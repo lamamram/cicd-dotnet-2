@@ -26,3 +26,10 @@
 ## Devops
 
 * [voir ici](./parts/devops.md)
+
+## agilité
+
+1. origine: le cycle de développement en cascade
+  * travail en silo
+  * cycle prédictif
+  * effet tunnel
