@@ -1,5 +1,7 @@
 ## origine de devops
 
+> The most powerful tool we have as developers is automation.
+
 * distinguer les stéréotypes dev et ops
 * solution humaine et technique pour résoudre le mur de la confusion
   * Culture
