@@ -26,10 +26,6 @@ build:
     - myusine
   script:
     - dotnet build
-    - >
-      mv 
-      ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3 
-      ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3.exe
   # prélèvement des fichiers/dossiers générés dans le job
   # pour téléchargement depuis gitlab
   # pour transmission aux jobs suivants
@@ -44,3 +40,13 @@ deploy:
     - myusine
   script:
     - dotnet exec ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3.dll
+  # règles d'exécution du job
+  rules:
+    # le job s'exécute si au moins une règle est vraie
+    # OU logique
+    # utilisation de variables d'environnement prédéfinies
+    # - if: $CI_COMMIT_BRANCH == "master"
+    # une règle est vraie si toutes ses clauses sont vraies
+    # ET logique
+    - if: $CI_COMMIT_TAG
+      when: manual
