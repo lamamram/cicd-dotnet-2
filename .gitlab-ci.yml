@@ -14,10 +14,11 @@ test:
     - myusine
   # liste des commandes à exécuter
   script:
-    - echo "Test"
+    - dotnet test
 
 
-build:
+# un job qui commence par "." est désactivé
+.build:
   stage: building
   # commandes de préparation du job
   #before_script:
