@@ -26,4 +26,4 @@ build:
     # commande du job
   script:
     - dotnet build
-    - ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3
+    - dotnet exec ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3
