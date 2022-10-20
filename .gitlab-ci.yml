@@ -1,5 +1,5 @@
 # image docker pour les jobs du pipeline
-image: bitnami/dotnet-sdk:6-debian-11
+image: bitnami/dotnet-sdk:3.1-debian-11
 
 stages:
   - testing
@@ -26,5 +26,8 @@ build:
     # commande du job
   script:
     - dotnet build
-    - mv ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3 ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3.exe
+    - >
+      mv 
+      ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3 
+      ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3.exe
     - dotnet exec ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3.exe
