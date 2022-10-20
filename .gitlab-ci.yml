@@ -36,7 +36,7 @@ build:
   artifacts:
     expire_in: 1 hour
     paths:
-      - ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3.dll
+      - ./usine_s3/bin/Debug/netcoreapp3.1/
 
 deploy:
   stage: deploying
