@@ -27,4 +27,4 @@ build:
   script:
     - dotnet build
     - mv ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3 ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3.exe
-    - dotnet exec ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3
+    - dotnet exec ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3.exe
