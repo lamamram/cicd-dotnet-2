@@ -19,11 +19,11 @@ test:
 build:
   stage: building
   # commandes de préparation du job
-  before_script:
-    - apt-get update -qq && apt-get install tree -y 
+  #before_script:
+  #  - apt-get update -qq && apt-get install tree -y 
   tags:
     - myusine
     # commande du job
   script:
     - dotnet build
-    - tree usine_s3
+    - ./usine_s3/bin/Debug/usine_s3
