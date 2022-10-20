@@ -4,6 +4,7 @@ image: bitnami/dotnet-sdk:3.1-debian-11
 stages:
   - testing
   - building
+  - deploying
 
 # nom de job: valeur arbitraire
 test:
@@ -23,11 +24,23 @@ build:
   #  - apt-get update -qq && apt-get install tree -y 
   tags:
     - myusine
-    # commande du job
   script:
     - dotnet build
     - >
       mv 
       ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3 
       ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3.exe
+  # prélèvement des fichiers/dossiers générés dans le job
+  # pour téléchargement depuis gitlab
+  # pour transmission aux jobs suivants
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3.dll
+
+deploy:
+  stage: deploying
+  tags:
+    - myusine
+  script:
     - dotnet exec ./usine_s3/bin/Debug/netcoreapp3.1/usine_s3.dll
