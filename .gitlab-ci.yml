@@ -10,8 +10,9 @@ deps:
   stage: .pre
   tags:
     - myusine
+  # restaure les dépendances
   script:
-    - dotnet build
+    - dotnet restore
   # prélèvement du cache
   cache:
     key: dependencies
@@ -38,7 +39,11 @@ test:
     # - dotnet add ./usine_s3_test/usine_s3_test.csproj package JUnitTestLogger --version 1.1.0
     # - dotnet test -v normal
     # || exit 0: rend la commande non bloquante
-    - dotnet test /p:CollectCoverage=true || exit 0
+    - > 
+      dotnet test 
+      --results-directory:reports
+      --collect "Code Coverage" || exit 0
+    - ls -al usine_s3_test/reports/
       # sans réinstaller les dépendances
     - dotnet test
       --no-restore
