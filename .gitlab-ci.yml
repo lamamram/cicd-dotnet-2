@@ -22,7 +22,7 @@ test:
     - >
       dotnet test 
       --logger "junit;LogFilePath=reports/units.xml" 
-      --resuts-directory:reports
+      --results-directory:reports
   artifacts:
     expire_in: 1 hour
     paths:
