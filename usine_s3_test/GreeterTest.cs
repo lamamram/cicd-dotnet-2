@@ -18,6 +18,7 @@ namespace usine_s3_test
             // Assert
             StringAssert.Contains(text, name);
             // Cleanup
+            
             // ... free variables, close files
         }
 
