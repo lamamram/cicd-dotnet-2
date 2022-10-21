@@ -6,6 +6,17 @@ stages:
   - building
   - deploying
 
+deps:
+  stage: .pre
+  # commandes de préparation du job
+  before_script:
+    - apt-get update -qq && apt-get install tree -y 
+  tags:
+    - myusine
+  script:
+    - dotnet build
+    - tree -a ~
+
 # nom de job: valeur arbitraire
 test:
   stage: testing
@@ -25,6 +36,8 @@ test:
       --results-directory:reports
   artifacts:
     expire_in: 1 hour
+    # remontée de certains rapports particuliers
+    # directement dans l'interface graphique de gitlab CI
     reports:
       junit: usine_s3_test/reports/units.xml
 
