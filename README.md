@@ -6,7 +6,7 @@ output: html_document
 ---
 # FORMATION USINE LOGICIELLE
 
-## installation d'une box vagrant
+## installation d'une box vagrant[^1]
 
 * installer virtualbox & vagrant
 * après redémarrage, ouvrir un powershell et tester: `vagrant --version` 
@@ -61,3 +61,5 @@ output: html_document
 <div class="green">
     Markdown css styles
 </div>
+
+[^1]: après install de virtualbox et vagrant
