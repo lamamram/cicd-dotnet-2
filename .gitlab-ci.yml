@@ -51,6 +51,7 @@ test:
     # directement dans l'interface graphique de gitlab CI
     reports:
       junit: usine_s3_test/reports/units.xml
+      cobertura: "reports/**/coverage.cobertura.xml"
   # installation du cache
   cache:
     key: dependencies
