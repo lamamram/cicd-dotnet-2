@@ -14,7 +14,9 @@ test:
     - myusine
   # liste des commandes à exécuter
   script:
-    - dotnet test
+    # ajout du projet cible pour exécution des tests
+    # - dotnet add reference ../usine_s3/usine_s3.csproj
+    - dotnet test -v normal
 
 
 # un job qui commence par "." est désactivé
