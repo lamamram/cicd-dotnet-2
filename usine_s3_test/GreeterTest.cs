@@ -30,6 +30,7 @@ namespace usine_s3_test
             greeter.Greet(null);
         }
 
+        [TestMethod]
         public void TestUpperGreet()
         {
             const string name = "bob";
