@@ -29,5 +29,19 @@ namespace usine_s3_test
             Greeter greeter = new Greeter();
             greeter.Greet(null);
         }
+
+        public void TestUpperGreet()
+        {
+            const string name = "bob";
+            const string mode = "upper";
+            Greeter greeter = new Greeter();
+            // Act
+            string text = greeter.Greet(name, mode);
+            // Assert
+            StringAssert.Contains(text, name.ToUpper());
+            // Cleanup
+
+            // ... free variables, close files
+        }
     }
 }
