@@ -25,8 +25,8 @@ test:
       --results-directory:reports
   artifacts:
     expire_in: 1 hour
-    paths:
-      - usine_s3_test/reports/units.xml
+    reports:
+      junit: usine_s3_test/reports/units.xml
 
 
 # un job qui commence par "." est désactivé
