@@ -10,7 +10,7 @@
   2. `vagrant up`
   3. `vagrant ssh`
   4. récipérer l' ip
-  5. faire la réslution de nom dans ke fichier hosts
+  5. faire la réslution de nom dans le fichier hosts
 
 ## commandes vagrant 
 
@@ -42,6 +42,7 @@
   * cycle prédictif
   * effet tunnel
 
+```html
 <style>
 .green {
     color: green;
@@ -49,6 +50,7 @@
     font-size: 30px;
 }
 </style>
+```
 
 <div class="green">
     Markdown css styles
