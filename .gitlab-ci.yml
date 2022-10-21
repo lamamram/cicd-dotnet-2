@@ -18,6 +18,11 @@ deps:
     paths:
       - ~/.nuget/packages
     policy: push
+  # génération du cache dès qu'un fichier projet
+  # est modifié
+  rules:
+    - changes:
+        - ./**/*.csproj
 
 # nom de job: valeur arbitraire
 test:
