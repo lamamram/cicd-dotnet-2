@@ -8,14 +8,16 @@ stages:
 
 deps:
   stage: .pre
-  # commandes de préparation du job
-  before_script:
-    - apt-get update -qq && apt-get install tree -y 
   tags:
     - myusine
   script:
     - dotnet build
-    - ls -al ~/.nuget/packages
+  # prélèvement du cache
+  cache:
+    key: dependencies
+    paths:
+      - ~/.nuget/packages
+    policy: push
 
 # nom de job: valeur arbitraire
 test:
@@ -32,6 +34,8 @@ test:
     # - dotnet test -v normal
     - >
       dotnet test 
+      # sans réinstaller les dépendances
+      --no-restore
       --logger "junit;LogFilePath=reports/units.xml" 
       --results-directory:reports
   artifacts:
@@ -40,6 +44,11 @@ test:
     # directement dans l'interface graphique de gitlab CI
     reports:
       junit: usine_s3_test/reports/units.xml
+  # installation du cache
+  cache:
+    key: dependencies
+    untracked: true
+    policy: pull
 
 
 # un job qui commence par "." est désactivé
@@ -51,7 +60,7 @@ test:
   tags:
     - myusine
   script:
-    - dotnet build
+    - dotnet build --no-restore
   # prélèvement des fichiers/dossiers générés dans le job
   # pour téléchargement depuis gitlab
   # pour transmission aux jobs suivants
@@ -59,6 +68,10 @@ test:
     expire_in: 1 hour
     paths:
       - ./usine_s3/bin/Debug/netcoreapp3.1/
+  cache:
+    key: dependencies
+    untracked: true
+    policy: pull
 
 deploy:
   stage: deploying
