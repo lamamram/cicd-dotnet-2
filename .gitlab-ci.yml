@@ -15,7 +15,7 @@ deps:
     - myusine
   script:
     - dotnet build
-    - tree -a ~
+    - ls -al ~/.nuget/packages
 
 # nom de job: valeur arbitraire
 test:
