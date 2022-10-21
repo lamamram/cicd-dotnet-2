@@ -14,7 +14,7 @@ namespace usine_s3_test
             const string name = "bob";
             Greeter greeter = new Greeter();
             // Act
-            string text = greeter.Greet(name);
+            string text = greeter.Greet("bill");
             // Assert
             StringAssert.Contains(text, name);
             // Cleanup
