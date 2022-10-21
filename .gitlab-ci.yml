@@ -14,9 +14,19 @@ test:
     - myusine
   # liste des commandes à exécuter
   script:
-    # ajout du projet cible pour exécution des tests
-    # - dotnet add reference ../usine_s3/usine_s3.csproj
-    - dotnet test -v normal
+    # ajout du projet cible au projet test pour exécution des tests
+    # - dotnet add ./usine_s3_test/usine_s3_test.csproj reference ./usine_s3/usine_s3.csproj
+    # ajout d'un package à un projet
+    # - dotnet add ./usine_s3_test/usine_s3_test.csproj package JUnitTestLogger --version 1.1.0
+    # - dotnet test -v normal
+    - >
+      dotnet test 
+      --logger "junit;LogFilePath=reports/units.xml" 
+      --resuts-directory:reports
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - reports/units.xml
 
 
 # un job qui commence par "." est désactivé
