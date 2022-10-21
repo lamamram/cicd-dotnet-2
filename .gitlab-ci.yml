@@ -39,8 +39,10 @@ test:
     # - dotnet test -v normal
     - >
       dotnet test 
+      /p:CollectCoverage=true
+      --collect "XPlat Code Coverage"
       # sans réinstaller les dépendances
-      --no-restore
+      --no-build
       --logger "junit;LogFilePath=reports/units.xml" 
       --results-directory:reports
   artifacts:
