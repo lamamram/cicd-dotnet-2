@@ -15,8 +15,8 @@ output: html_document
   1. `vagrant box add mlamamra/myusine`
   2. `vagrant up`
   3. `vagrant ssh`
-  4. récipérer l' ip
-  5. faire la réslution de nom dans le fichier hosts
+  4. récupérer l' ip
+  5. faire la réslution de nom dans le fichier hosts[^2]
 
 ## commandes vagrant 
 
@@ -63,3 +63,6 @@ output: html_document
 </div>
 
 [^1]: après install de virtualbox et vagrant
+
+[^2]: dans `C:\Windows\System32\drivers\etc\hosts`
+      ou `/etc/hosts` sous Unix
